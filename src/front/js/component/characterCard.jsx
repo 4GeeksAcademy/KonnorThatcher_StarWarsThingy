@@ -11,7 +11,7 @@ const CharacterCard = ({ imgURL = "https://placehold.co/600x400", name = "Noah B
         <p className="card-text mb-1">Hair Color: {hairColor}</p>
         <p className='card-text mb-1'>Eye Color: {eyeColor}</p>
         <div className='d-flex justify-content-between mt-3'>
-            <Link to="/demo">
+            <Link to="/learnMore">
                 <button className='btn btn-info'>Learn More!</button>
             </Link>
             <button className="btn btn-outline-danger">
