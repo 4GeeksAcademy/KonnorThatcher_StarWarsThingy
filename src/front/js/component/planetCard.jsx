@@ -2,7 +2,12 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 
-const PlanetCard = ({imgURL = "https://placehold.co/600x400", name = "Mars 2", population = 0, terrain = "n/a"}) => {
+const PlanetCard = ({
+  imgURL = "https://placehold.co/600x400", 
+  name = "Mars 2", 
+  population = 0, 
+  terrain = "n/a"
+}) => {
   return (
     <div className="card me-5 flex-shrink-0" style={{ width: "18rem" }}>
       <img src={imgURL} className="card-img-top" alt={name} />

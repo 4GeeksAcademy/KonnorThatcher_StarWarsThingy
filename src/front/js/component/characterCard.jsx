@@ -2,7 +2,13 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 
-const CharacterCard = ({ imgURL = "https://placehold.co/600x400", name = "Noah Botty",  hairColor = "n/a", eyeColor = "n/a", id}) => {
+const CharacterCard = ({ 
+  imgURL = "https://placehold.co/600x400", 
+  name = "Noah Botty", 
+  hairColor = "n/a", 
+  eyeColor = "n/a", 
+  id
+}) => {
   return (
     <div className="card me-5 flex-shrink-0" style={{width: "18rem"}}>
       <img src={imgURL} className="card-img-top" alt={name} />

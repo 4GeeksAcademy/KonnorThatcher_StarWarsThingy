@@ -33,13 +33,32 @@ export const Home = () => {
     		<div className='mx-5'>
     		    <h2 className='text-danger'>Characters</h2>
     		    <div className='d-flex overflow-x-auto p-2'>
-    		        {people.map((person, idx) => <CharacterCard key={idx} name={person.name} hairColor={person.hair_color} eyeColor={person.eye_color} id={person.name.split(' ').join('_')}/>)}
+    		        {people.map((person, idx) => {
+						return (
+							<CharacterCard 
+								key={idx} 
+								name={person.name} 
+								hairColor={person.hair_color} 
+								eyeColor={person.eye_color} 
+								id={person.name.split(' ').join('_')}
+							/>
+						)
+					})}
     		    </div>
     		</div>
     		<div className='m-5'>
     		    <h2 className='text-danger'>Planets</h2>
     		    <div className="d-flex overflow-x-auto p-2">
-    		        {planets.map((planet, idx) => <PlanetCard key={idx} name={planet.name} population={planet.population} terrain={planet.terrain}/>)}
+    		        {planets.map((planet, idx) => {
+						return (
+							<PlanetCard 
+								key={idx} 
+								name={planet.name} 
+								population={planet.population} 
+								terrain={planet.terrain}
+							/>
+						)
+					})}
     		    </div>
     		</div>
 		</div>
