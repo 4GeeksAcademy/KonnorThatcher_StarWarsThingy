@@ -18,14 +18,16 @@ export const Home = () => {
 		fetch("https://swapi.dev/api/people/", {method: 'GET'})
 		.then(result => result.json())
 		.then(people => setPeople(people.results))
-		
 	}
 
 	const getPlanets = () => {
 		fetch("https://swapi.dev/api/planets/", {method: 'GET'})
 		.then(result => result.json())
 		.then(planets => setPlanets(planets.results))
-		
+	}
+
+	const idFromURL = (url) => {
+		return url.match(/[0-9]/g);
 	}
 
 	return (
@@ -40,7 +42,7 @@ export const Home = () => {
 								name={person.name} 
 								hairColor={person.hair_color} 
 								eyeColor={person.eye_color} 
-								id={person.name.split(' ').join('_')}
+								id={person.url.match(/[0-9]/g).join('')}
 							/>
 						)
 					})}
@@ -56,6 +58,7 @@ export const Home = () => {
 								name={planet.name} 
 								population={planet.population} 
 								terrain={planet.terrain}
+								id={planet.url.match(/[0-9]/g).join('')}
 							/>
 						)
 					})}

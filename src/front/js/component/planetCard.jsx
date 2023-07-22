@@ -6,7 +6,8 @@ const PlanetCard = ({
   imgURL = "https://placehold.co/600x400", 
   name = "Mars 2", 
   population = 0, 
-  terrain = "n/a"
+  terrain = "n/a",
+  id
 }) => {
   return (
     <div className="card me-5 flex-shrink-0" style={{ width: "18rem" }}>
@@ -16,7 +17,7 @@ const PlanetCard = ({
         <p className="card-text mb-1">Population: {population}</p>
         <p className="card-text mb-1">Terrain: {terrain}</p>
         <div className='d-flex justify-content-between mt-3'>
-            <Link to="/learnMore">
+            <Link to={"/planetPage/" + id}>
                 <button className='btn btn-info'>Learn More!</button>
             </Link>
             <button className="btn btn-outline-danger">
