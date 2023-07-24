@@ -37,11 +37,21 @@ const CharacterPage = () => {
             <div className="col-6">
                 <h2>{character.name}</h2>
                 <ul>
-                    <li>Gender: {character.gender}</li>
-                    <li>Birth Year: {character.birth_year}</li>
-                    <li>Height: {cmToFt(character.height)}</li>
-                    <li>Hair Color: {character.hair_color}</li>
-                    <li>Eye Color: {character.eye_color}</li>
+                    <li>
+                        <b>Gender:</b> {character.gender}
+                    </li>
+                    <li>
+                        <b>Birth Year:</b> {character.birth_year}
+                    </li>
+                    <li>
+                        <b>Height:</b> {cmToFt(character.height)}
+                    </li>
+                    <li>
+                        <b>Hair Color:</b> {character.hair_color}
+                    </li>
+                    <li>
+                        <b>Eye Color:</b> {character.eye_color}
+                    </li>
                     <li></li>
                 </ul>
             </div>

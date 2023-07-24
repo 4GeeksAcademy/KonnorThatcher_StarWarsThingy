@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import CharacterCard from '../component/characterCard.jsx'
 import PlanetCard from '../component/planetCard.jsx'
+import PlaceholderCard from "../component/placeholderCard.jsx";
 import "../../styles/home.css";
 
 export const Home = () => {
@@ -35,7 +36,7 @@ export const Home = () => {
     		<div className='mx-5'>
     		    <h2 className='text-danger'>Characters</h2>
     		    <div className='d-flex overflow-x-auto p-2'>
-    		        {people.map((person, idx) => {
+    		        {people.length === 0 ? (<PlaceholderCard />) : people.map((person, idx) => {
 						return (
 							<CharacterCard 
 								key={idx} 
@@ -51,7 +52,7 @@ export const Home = () => {
     		<div className='m-5'>
     		    <h2 className='text-danger'>Planets</h2>
     		    <div className="d-flex overflow-x-auto p-2">
-    		        {planets.map((planet, idx) => {
+    		        {planets.length === 0 ? (<PlaceholderCard />) : planets.map((planet, idx) => {
 						return (
 							<PlanetCard 
 								key={idx} 
