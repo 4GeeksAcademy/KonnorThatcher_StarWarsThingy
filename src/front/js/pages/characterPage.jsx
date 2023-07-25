@@ -17,8 +17,7 @@ const CharacterPage = () => {
     }
 
     const imgStyle = {
-        width: "90%",
-        aspectRatio: "3/2",
+        width: "90%"
     }
     
     const cmToFt = (height) => {
@@ -33,7 +32,7 @@ const CharacterPage = () => {
     return (
         <div className='row p-5'>
             <div className="col-6 d-flex">
-                <img className='ms-auto' src="https://placehold.co/600x400" style={imgStyle}></img>
+                <img className='ms-auto' src={`https://starwars-visualguide.com/assets/img/characters/${charID}.jpg`} style={imgStyle}></img>
             </div>
             {Object.keys(character).length === 0 ? (<PlaceholderPage />) : (<div className="col-6">
                 <h2>{character.name}</h2>

@@ -17,14 +17,16 @@ const PlanetPage = () => {
     }
 
     const imgStyle = {
-        width: "90%",
-        aspectRatio: "3/2",
+        width: "90%"
     }
 
     return (
       <div className='row p-5'>
             <div className="col-6 d-flex">
-                <img className='ms-auto' src="https://placehold.co/600x400" style={imgStyle}></img>
+                <img
+                 className='ms-auto' 
+                 src={planetID == 1 ? "https://placehold.co/400x400" : `https://starwars-visualguide.com/assets/img/planets/${planetID}.jpg`} 
+                 style={imgStyle}></img>
             </div>
             {Object.keys(planet).length === 0 ? (<PlaceholderPage />) : (<div className="col-6">
                 <h2>{planet.name}</h2>
