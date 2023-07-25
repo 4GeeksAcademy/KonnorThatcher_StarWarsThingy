@@ -11,7 +11,12 @@ const CharacterCard = ({
 }) => {
   return (
     <div className="card me-5 flex-shrink-0" style={{width: "18rem"}}>
-      <img src={imgURL} className="card-img-top" alt={name} />
+      <img 
+      src={imgURL} 
+      className="card-img-top" 
+      alt={name}
+      onError={e => e.target.src = "https://placehold.co/400x550"} 
+      />
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
         <p className="card-text mb-1">Hair Color: {hairColor}</p>

@@ -58,7 +58,7 @@ export const Home = () => {
 						let id = planet.url.match(/[0-9]/g).join('')
 						return (
 							<PlanetCard 
-								imgURL={id == 1 ? "https://placehold.co/400x400" : `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
+								imgURL={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
 								key={idx} 
 								name={planet.name} 
 								population={planet.population} 

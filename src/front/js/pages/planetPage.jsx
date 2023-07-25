@@ -25,8 +25,10 @@ const PlanetPage = () => {
             <div className="col-6 d-flex">
                 <img
                  className='ms-auto' 
-                 src={planetID == 1 ? "https://placehold.co/400x400" : `https://starwars-visualguide.com/assets/img/planets/${planetID}.jpg`} 
-                 style={imgStyle}></img>
+                 src={`https://starwars-visualguide.com/assets/img/planets/${planetID}.jpg`} 
+                 style={imgStyle}
+                 onError={e => e.target.src = "https://placehold.co/400x400"} 
+                 />
             </div>
             {Object.keys(planet).length === 0 ? (<PlaceholderPage />) : (<div className="col-6">
                 <h2>{planet.name}</h2>

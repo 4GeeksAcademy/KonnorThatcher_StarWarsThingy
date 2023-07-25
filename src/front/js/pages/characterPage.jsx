@@ -32,7 +32,12 @@ const CharacterPage = () => {
     return (
         <div className='row p-5'>
             <div className="col-6 d-flex">
-                <img className='ms-auto' src={`https://starwars-visualguide.com/assets/img/characters/${charID}.jpg`} style={imgStyle}></img>
+                <img 
+                className='ms-auto' 
+                src={`https://starwars-visualguide.com/assets/img/characters/${charID}.jpg`} 
+                style={imgStyle}
+                onError={e => e.target.src = "https://placehold.co/400x550"} 
+                />
             </div>
             {Object.keys(character).length === 0 ? (<PlaceholderPage />) : (<div className="col-6">
                 <h2>{character.name}</h2>
