@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import PlaceholderPage from '../component/placeholderPage.jsx'
 
 const PlanetPage = () => {
     const {planetID} = useParams()
@@ -25,9 +26,9 @@ const PlanetPage = () => {
             <div className="col-6 d-flex">
                 <img className='ms-auto' src="https://placehold.co/600x400" style={imgStyle}></img>
             </div>
-            <div className="col-6">
+            {Object.keys(planet).length === 0 ? (<PlaceholderPage />) : (<div className="col-6">
                 <h2>{planet.name}</h2>
-                <ul>
+                <ul className='mt-3'>
                     <li>
                         <b>Population:</b> {planet.population}
                     </li>
@@ -44,7 +45,7 @@ const PlanetPage = () => {
                         <b>Days in a Year:</b> {planet.orbital_period} days
                     </li>
                 </ul>
-            </div>
+            </div>)}
         </div>
     )
 }

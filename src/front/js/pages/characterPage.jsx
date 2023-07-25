@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
+import PlaceholderPage from '../component/placeholderPage.jsx'
 
 const CharacterPage = () => {
     const {charID} = useParams()
@@ -34,9 +35,9 @@ const CharacterPage = () => {
             <div className="col-6 d-flex">
                 <img className='ms-auto' src="https://placehold.co/600x400" style={imgStyle}></img>
             </div>
-            <div className="col-6">
+            {Object.keys(character).length === 0 ? (<PlaceholderPage />) : (<div className="col-6">
                 <h2>{character.name}</h2>
-                <ul>
+                <ul className='mt-3'>
                     <li>
                         <b>Gender:</b> {character.gender}
                     </li>
@@ -52,9 +53,8 @@ const CharacterPage = () => {
                     <li>
                         <b>Eye Color:</b> {character.eye_color}
                     </li>
-                    <li></li>
                 </ul>
-            </div>
+            </div>)}
         </div>
     )
 }
