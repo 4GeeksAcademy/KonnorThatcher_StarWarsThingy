@@ -11,13 +11,15 @@ const CharacterPage = () => {
     const url = `https://swapi.dev/api/people/${charID}/`
 
     const getPerson = () => {
+        if (Object.keys(character) > 0) setCharacter({})
         fetch(url, {method: 'GET'})
         .then(response => response.json())
         .then(person => setCharacter(person))
     }
 
     const imgStyle = {
-        width: "90%"
+        width: "90%",
+        maxWidth: "32rem"
     }
     
     const cmToFt = (height) => {
@@ -34,7 +36,7 @@ const CharacterPage = () => {
             <div className="col-6 d-flex">
                 <img 
                 className='ms-auto' 
-                src={`https://starwars-visualguide.com/assets/img/characters/${charID}.jpg`} 
+                src={`https://starwars-visualguide.com/assets/img/characters/${charID}.jpg`}
                 style={imgStyle}
                 onError={e => e.target.src = "https://placehold.co/400x550"} 
                 />

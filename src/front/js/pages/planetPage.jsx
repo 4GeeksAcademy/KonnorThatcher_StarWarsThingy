@@ -11,13 +11,15 @@ const PlanetPage = () => {
     const url = `https://swapi.dev/api/planets/${planetID}/`
 
     const getPlanet = () => {
+        if (Object.keys(planet).length > 0) setPlanet({})
         fetch(url, {method: 'GET'})
         .then(response => response.json())
         .then(planet => setPlanet(planet))
     }
 
     const imgStyle = {
-        width: "90%"
+        width: "90%",
+        maxWidth: "32rem"
     }
 
     return (

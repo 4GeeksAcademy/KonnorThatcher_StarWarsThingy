@@ -16,12 +16,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			favorites: [
 				{
-					name: "Example",
+					name: "R5-D4",
 					type: "character",
 					id: "8"
 				},
 				{
-					name: "Other One",
+					name: "Bespin",
 					type: "planet",
 					id: "6"
 				}

@@ -8,8 +8,17 @@ const FavoritesDropdown = () => {
 
   return (
     <div className="dropdown">
-        <button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Favorites <span className='bg-dark px-1'>{store.favorites.length}</span>
+        <button 
+        className="btn btn-primary dropdown-toggle" 
+        type="button" 
+        data-bs-toggle="dropdown" 
+        aria-expanded="false"
+        disabled={store.favorites.length === 0 ? true : false}
+        >
+            Favorites 
+            {store.favorites.length > 0 ? (<span className='bg-light ms-1 text-danger px-2 fw-semibold rounded-circle'>
+                {store.favorites.length}
+            </span>) : ""}
         </button>
         <ul className="dropdown-menu">
             {store.favorites.map((item, idx) => {
