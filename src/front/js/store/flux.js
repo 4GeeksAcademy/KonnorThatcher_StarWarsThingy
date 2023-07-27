@@ -13,6 +13,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
+			],
+			favorites: [
+				{
+					name: "Example",
+					type: "character",
+					id: "8"
+				},
+				{
+					name: "Other One",
+					type: "planet",
+					id: "6"
+				}
 			]
 		},
 		actions: {
@@ -46,6 +58,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			addFavorite: (obj) => {
+				const store = getStore();
+				const newArr = [...store.favorites, obj]
+				setStore({favorites: newArr})
+			},
+			removeFavorite: (obj) => {
+				const store = getStore();
+				const newArr = store.favorites.filter((item) => item.name != obj.name)
+				setStore({favorites: newArr})
 			}
 		}
 	};

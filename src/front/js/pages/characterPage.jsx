@@ -6,7 +6,7 @@ const CharacterPage = () => {
     const {charID} = useParams()
     const [character, setCharacter] = useState({})
 
-    useEffect(() => {getPerson()}, [])
+    useEffect(() => {getPerson()}, [charID])
 
     const url = `https://swapi.dev/api/people/${charID}/`
 

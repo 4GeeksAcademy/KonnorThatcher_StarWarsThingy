@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from "react-router-dom";
+import { Context } from '../store/appContext';
 
 
 const CharacterCard = ({ 
@@ -9,6 +10,19 @@ const CharacterCard = ({
   eyeColor = "n/a", 
   id
 }) => {
+  const {store, actions} = useContext(Context);
+
+  const charFavorite = (name, id) => {
+    if (store.favorites.filter((item) => item.name === name).length === 0) {
+      const newObj = {
+        name: name,
+        type: "character",
+        id: id
+      }
+      actions.addFavorite(newObj)
+    } else console.log("That's already in here");
+  }
+  
   return (
     <div className="card me-5 flex-shrink-0" style={{width: "18rem"}}>
       <img 
@@ -25,7 +39,7 @@ const CharacterCard = ({
             <Link to={"/characterPage/" + id}>
                 <button className='btn btn-info'>Learn More!</button>
             </Link>
-            <button className="btn btn-outline-danger">
+            <button className="btn btn-outline-danger" onClick={() => charFavorite(name, id)}>
                 <i className="fa-regular fa-heart"></i>
             </button>
         </div>

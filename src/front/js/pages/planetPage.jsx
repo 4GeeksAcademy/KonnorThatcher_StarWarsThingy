@@ -6,7 +6,7 @@ const PlanetPage = () => {
     const {planetID} = useParams()
     const [planet, setPlanet] = useState({})
 
-    useEffect(() => {getPlanet()}, [])
+    useEffect(() => {getPlanet()}, [planetID])
 
     const url = `https://swapi.dev/api/planets/${planetID}/`
 
