@@ -4,8 +4,6 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
 import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
 import CharacterPage from "./pages/characterPage.jsx";
 import PlanetPage from "./pages/planetPage.jsx";
 import injectContext from "./store/appContext";
@@ -30,7 +28,6 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<CharacterPage />} path="/characterPage/:charID" />
                         <Route element={<PlanetPage />} path="/planetPage/:planetID"/>
-                        <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />

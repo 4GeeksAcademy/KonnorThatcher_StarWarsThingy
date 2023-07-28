@@ -11,18 +11,7 @@ const PlanetCard = ({
   id
 }) => {
   const {store, actions} = useContext(Context)
-
-  const planetFavorite = (name, id) => {
-    if (store.favorites.filter((item) => item.name === name).length === 0) {
-      const newObj = {
-        name: name,
-        type: "planet",
-        id: id
-      }
-      actions.addFavorite(newObj)
-    } else console.log("That is already in there")
-  }
-
+  
   return (
     <div className="card me-5 flex-shrink-0" style={{ width: "18rem" }}>
       <img 
@@ -39,7 +28,10 @@ const PlanetCard = ({
             <Link to={"/planetPage/" + id}>
                 <button className='btn btn-info'>Learn More!</button>
             </Link>
-            <button className="btn btn-outline-danger" onClick={() => planetFavorite(name, id)}>
+            <button 
+            className={`btn btn-${store.favorites.filter((item) => item.name === name).length < 1 ? "outline-" : "" }danger`} 
+            onClick={() => actions.addFavorite(name, "planet", id)}
+            >
                 <i className="fa-regular fa-heart"></i>
             </button>
         </div>

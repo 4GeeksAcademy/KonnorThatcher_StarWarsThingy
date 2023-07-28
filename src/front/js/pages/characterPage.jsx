@@ -11,7 +11,7 @@ const CharacterPage = () => {
     const url = `https://swapi.dev/api/people/${charID}/`
 
     const getPerson = () => {
-        if (Object.keys(character) > 0) setCharacter({})
+        if (Object.keys(character).length > 0) setCharacter({})
         fetch(url, {method: 'GET'})
         .then(response => response.json())
         .then(person => setCharacter(person))

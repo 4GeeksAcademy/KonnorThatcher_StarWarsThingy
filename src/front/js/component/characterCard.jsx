@@ -11,17 +11,6 @@ const CharacterCard = ({
   id
 }) => {
   const {store, actions} = useContext(Context);
-
-  const charFavorite = (name, id) => {
-    if (store.favorites.filter((item) => item.name === name).length === 0) {
-      const newObj = {
-        name: name,
-        type: "character",
-        id: id
-      }
-      actions.addFavorite(newObj)
-    } else console.log("That's already in here");
-  }
   
   return (
     <div className="card me-5 flex-shrink-0" style={{width: "18rem"}}>
@@ -39,7 +28,10 @@ const CharacterCard = ({
             <Link to={"/characterPage/" + id}>
                 <button className='btn btn-info'>Learn More!</button>
             </Link>
-            <button className="btn btn-outline-danger" onClick={() => charFavorite(name, id)}>
+            <button 
+            className={`btn btn-${store.favorites.filter((item) => item.name === name).length < 1 ? "outline-" : "" }danger`} 
+            onClick={() => actions.addFavorite(name, "character", id)}
+            >
                 <i className="fa-regular fa-heart"></i>
             </button>
         </div>

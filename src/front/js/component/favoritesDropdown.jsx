@@ -27,7 +27,7 @@ const FavoritesDropdown = () => {
                       <Link to={`/${item.type}Page/${item.id}`}>
                           <p className='my-1'>{item.name}</p>
                       </Link>
-                      <button className="btn btn-danger" onClick={() => actions.removeFavorite(item)}>
+                      <button className="btn btn-danger ms-1" onClick={() => actions.removeFavorite(item)}>
                           <i className="fa-solid fa-trash-can"></i>
                       </button>
                   </div>
